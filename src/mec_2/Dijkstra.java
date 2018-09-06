@@ -15,12 +15,13 @@ public class Dijkstra {
         this.graph = graph;
     }
 
-    public ArrayList<Node> calculateShortestPath(String origin) {
+    public ArrayList<Node> calculateShortestPath(String origin, String destination) {
 
         Node node_origin = this.graph.getNode(origin);
         node_origin.setCostFromSource(0);
         Set<Node> settledNodes = new HashSet<>();
         Set<Node> unsettledNodes = new HashSet<>();
+        ArrayList<Node> path = new ArrayList<>();
 
         unsettledNodes.add(node_origin);
 
@@ -38,7 +39,13 @@ public class Dijkstra {
             settledNodes.add(currentNode);
         }
 
-        return node_origin.getPath();
+        for(Node n : settledNodes) {
+            if(n.getName().equals(destination)) {
+                path = (n.getPath());
+                path.add(n);
+            }
+        }
+        return path;
     }
 
     private Node getLowestDistanceNode(Set<Node> unsettledNodes) {

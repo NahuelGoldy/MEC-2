@@ -90,7 +90,7 @@ public class Main {
 
         // calculate path between 2 Nodes
         Dijkstra d = new Dijkstra(graph);
-        ArrayList<Node> path = d.calculateShortestPath("F");
+        ArrayList<Node> path = d.calculateShortestPath("F", "I");
         System.out.println("Path: ");
         for(Node n : path) {
             System.out.println(n.getName() + " -> ");
