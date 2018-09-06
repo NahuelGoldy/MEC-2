@@ -2,7 +2,6 @@ package mec_2;
 
 import mec_2.model.Graph;
 import mec_2.model.Node;
-
 import java.util.ArrayList;
 
 public class Main {
@@ -91,7 +90,12 @@ public class Main {
 
         // calculate path between 2 Nodes
         Dijkstra d = new Dijkstra(graph);
-        ArrayList<Node> path = d.calculateShortestPath("A", "L");
+        ArrayList<Node> path = d.calculateShortestPath("F", "I");
+        System.out.println("Path: ");
+        for(Node n : path) {
+            System.out.println(n.getName() + " -> ");
+        }
+        System.out.println("END");
     }
 
 }
