@@ -2,48 +2,64 @@ package mec_2;
 
 import mec_2.model.Graph;
 import mec_2.model.Node;
-
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Dijkstra {
 
     private Graph graph;
-    private ArrayList<Node> visited;
 
     public Dijkstra(Graph graph) {
         this.graph = graph;
-        this.visited = new ArrayList<>();
     }
 
-    public ArrayList<Node> calculateShortestPath(String origin, String destination) {
+    public ArrayList<Node> calculateShortestPath(String origin) {
 
-        ArrayList<Node> path = new ArrayList<>();
         Node node_origin = this.graph.getNode(origin);
-        Map<Node, Integer> adjacents = node_origin.getAdjacents();
-        Node closest = null;
-        int minWeight = Integer.MAX_VALUE;
+        node_origin.setCostFromSource(0);
+        Set<Node> settledNodes = new HashSet<>();
+        Set<Node> unsettledNodes = new HashSet<>();
 
-        this.visited.add(node_origin);
-        path.add(node_origin);
+        unsettledNodes.add(node_origin);
 
-        for(Node adj : adjacents.keySet()) {
-            if(adjacents.get(adj) < minWeight) {
-                minWeight = adjacents.get(adj);
-                closest = adj;
+        while (unsettledNodes.size() != 0) {
+            Node currentNode = getLowestDistanceNode(unsettledNodes);
+            unsettledNodes.remove(currentNode);
+            Map<Node, Integer> adjacents = currentNode.getAdjacents();
+
+            for (Node adj : adjacents.keySet()) {
+                if (!settledNodes.contains(adj)) {
+                    CalculateMinimumDistance(adj, adjacents.get(adj), currentNode);
+                    unsettledNodes.add(adj);
+                }
             }
-
+            settledNodes.add(currentNode);
         }
 
-        // calculate path
-        if(closest.getName().equals(destination)) {
-            path.add(closest);
-        }
-        else {
-            path.addAll(calculateShortestPath(closest.getName(), destination));
-        }
-        return path;
+        return node_origin.getPath();
+    }
 
+    private Node getLowestDistanceNode(Set<Node> unsettledNodes) {
+        Node lowestDistanceNode = null;
+        int lowestDistance = Integer.MAX_VALUE;
+        for (Node node: unsettledNodes) {
+            int nodeDistance = node.getCostFromSource();
+            if (nodeDistance < lowestDistance) {
+                lowestDistance = nodeDistance;
+                lowestDistanceNode = node;
+            }
+        }
+        return lowestDistanceNode;
+    }
+
+    private void CalculateMinimumDistance(Node evaluationNode, Integer edgeCost, Node sourceNode) {
+        if (sourceNode.getCostFromSource() + edgeCost < evaluationNode.getCostFromSource()) {
+            evaluationNode.setCostFromSource(sourceNode.getCostFromSource() + edgeCost);
+            evaluationNode.setPath(sourceNode.getPath());
+            evaluationNode.addToPath(sourceNode);
+        }
     }
 
 }
