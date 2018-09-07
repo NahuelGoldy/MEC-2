@@ -2,12 +2,42 @@ package mec_2;
 
 import mec_2.model.Graph;
 import mec_2.model.Node;
+import mec_2.utils.Logger;
+
 import java.util.ArrayList;
 
 public class Main {
 
+    private static Logger logger;
+
     public static void main(String[] args) {
-        System.out.println("---***---");
+
+        // set up variables
+        String origin = "F";
+        String dest = "I";
+        logger = Logger.getLoggerInstance();
+        Graph graph = buildGraph();
+
+        // calculate path between 2 Nodes
+        Dijkstra dijkstra = new Dijkstra(graph);
+        ArrayList<Node> path = dijkstra.calculateShortestPath(origin, dest);
+
+        // auxiliary variables and loop to improve legibility (log)
+        String pathString = "";
+        int pathCost = 0;
+        for(Node n : path) {
+            pathString += (n.getName() + " -> ");
+            if(n.getName() == dest) pathCost = n.getCostFromSource();
+        }
+        pathString = pathString.substring(0, pathString.length()-3);
+        logger.log(" SUCCESS!");
+        logger.log(" Shortest path from " + origin + " to " + dest + " has been found!");
+        logger.log(" Shortest path is: " + pathString + ", which has a cost of: " + pathCost);
+
+        logger.saveLogToFile("path_from_" + origin + "_to_" + dest);
+    }
+
+    private static Graph buildGraph() {
 
         // initialize Nodes
         Node nodeA = new Node("A");
@@ -88,14 +118,7 @@ public class Main {
         graph.addNode(nodeK);
         graph.addNode(nodeL);
 
-        // calculate path between 2 Nodes
-        Dijkstra d = new Dijkstra(graph);
-        ArrayList<Node> path = d.calculateShortestPath("F", "I");
-        System.out.println("Path: ");
-        for(Node n : path) {
-            System.out.println(n.getName() + " -> ");
-        }
-        System.out.println("END");
+        return graph;
     }
 
 }
