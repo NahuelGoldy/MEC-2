@@ -15,36 +15,47 @@ public class Dijkstra {
         this.graph = graph;
     }
 
-    public ArrayList<Node> calculateShortestPath(String origin, String destination) {
+    public ArrayList<Node> calculateShortestPath(String origin, final String destination) {
 
-        Node node_origin = this.graph.getNode(origin);
-        node_origin.setCostFromSource(0);
+        // to notice: this variant actually calculates the shortest path from "origin" to ALL other nodes in the graph
+
         Set<Node> settledNodes = new HashSet<>();
         Set<Node> unsettledNodes = new HashSet<>();
         ArrayList<Node> path = new ArrayList<>();
+        Node node_origin = this.graph.getNode(origin);
+        // set up cost zero for initial node
+        node_origin.setCostFromSource(0);
 
         unsettledNodes.add(node_origin);
 
         while (unsettledNodes.size() != 0) {
+            // from the list of unsettled nodes, select the one that holds the lowest aggregate cost from source
             Node currentNode = getLowestDistanceNode(unsettledNodes);
             unsettledNodes.remove(currentNode);
             Map<Node, Integer> adjacents = currentNode.getAdjacents();
 
+            // check each one of its adjacent nodes
             for (Node adj : adjacents.keySet()) {
-                if (!settledNodes.contains(adj)) {
-                    CalculateMinimumDistance(adj, adjacents.get(adj), currentNode);
+                // if the adjacent node has not been already settled
+                //  and the current path has a lower cost than the one it already holds, update it
+                if (!settledNodes.contains(adj) && (currentNode.getCostFromSource() + adjacents.get(adj) < adj.getCostFromSource())) {
+                    adj.setCostFromSource(currentNode.getCostFromSource() + adjacents.get(adj));
+                    adj.setPath(currentNode.getPath());
+                    adj.addToPath(currentNode);
                     unsettledNodes.add(adj);
                 }
             }
             settledNodes.add(currentNode);
         }
 
-        for(Node n : settledNodes) {
+        // finalize construction of the result list
+        settledNodes.forEach((Node n) -> {
             if(n.getName().equals(destination)) {
-                path = (n.getPath());
+                path.addAll(n.getPath());
                 path.add(n);
+                return;
             }
-        }
+        });
         return path;
     }
 
@@ -60,13 +71,4 @@ public class Dijkstra {
         }
         return lowestDistanceNode;
     }
-
-    private void CalculateMinimumDistance(Node evaluationNode, Integer edgeCost, Node sourceNode) {
-        if (sourceNode.getCostFromSource() + edgeCost < evaluationNode.getCostFromSource()) {
-            evaluationNode.setCostFromSource(sourceNode.getCostFromSource() + edgeCost);
-            evaluationNode.setPath(sourceNode.getPath());
-            evaluationNode.addToPath(sourceNode);
-        }
-    }
-
 }
