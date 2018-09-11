@@ -2,6 +2,7 @@ package mec_2;
 
 import mec_2.model.Graph;
 import mec_2.model.Node;
+import mec_2.model.OriginDestinationWrapper;
 import mec_2.utils.Logger;
 
 import java.util.ArrayList;
@@ -12,29 +13,31 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // set up variables
-        String origin = "F";
-        String dest = "I";
         logger = Logger.getLoggerInstance();
-        Graph graph = buildGraph();
+        ArrayList<OriginDestinationWrapper> scenarios = buildScenarios();
 
-        // calculate path between 2 Nodes
-        Dijkstra dijkstra = new Dijkstra(graph);
-        ArrayList<Node> path = dijkstra.calculateShortestPath(origin, dest);
+        // calculate path between 2 Nodes for every scenario (Origin-Destination pairs)
+        for(OriginDestinationWrapper scenario: scenarios) {
+            Graph graph = buildGraph();
+            Dijkstra dijkstra = new Dijkstra(graph);
+            ArrayList<Node> path = dijkstra.calculateShortestPath(scenario.getOrigin(), scenario.getDestination());
 
-        // auxiliary variables and loop to improve legibility (log)
-        String pathString = "";
-        int pathCost = 0;
-        for(Node n : path) {
-            pathString += (n.getName() + " -> ");
-            if(n.getName() == dest) pathCost = n.getCostFromSource();
+            // auxiliary variables and loop to improve legibility (log)
+            String pathString = "";
+            int pathCost = 0;
+            for(Node n : path) {
+                pathString += (n.getName() + " -> ");
+                if(n.getName() == scenario.getDestination()) pathCost = n.getCostFromSource();
+            }
+            pathString = pathString.substring(0, pathString.length()-3);
+            logger.log(" SUCCESS!");
+            logger.log(" Shortest path from " + scenario.getOrigin() + " to " + scenario.getDestination() + " has been found!");
+            logger.log(" Shortest path is: " + pathString + ", which has a cost of: " + pathCost);
+
+            logger.saveLogToFile("path_from_" + scenario.getOrigin() + "_to_" + scenario.getDestination());
+
+            logger.clearLog();
         }
-        pathString = pathString.substring(0, pathString.length()-3);
-        logger.log(" SUCCESS!");
-        logger.log(" Shortest path from " + origin + " to " + dest + " has been found!");
-        logger.log(" Shortest path is: " + pathString + ", which has a cost of: " + pathCost);
-
-        logger.saveLogToFile("path_from_" + origin + "_to_" + dest);
     }
 
     private static Graph buildGraph() {
@@ -119,6 +122,19 @@ public class Main {
         graph.addNode(nodeL);
 
         return graph;
+    }
+
+    private static ArrayList<OriginDestinationWrapper> buildScenarios() {
+
+        ArrayList<OriginDestinationWrapper> scenarios = new ArrayList<>();
+
+        scenarios.add(new OriginDestinationWrapper("A", "L"));
+        scenarios.add(new OriginDestinationWrapper("B", "H"));
+        scenarios.add(new OriginDestinationWrapper("C", "J"));
+        scenarios.add(new OriginDestinationWrapper("K", "D"));
+        scenarios.add(new OriginDestinationWrapper("I", "B"));
+
+        return scenarios;
     }
 
 }

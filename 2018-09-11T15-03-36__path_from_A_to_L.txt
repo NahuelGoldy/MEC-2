@@ -1,0 +1,604 @@
+2018-09-11T15:03:36.362Z - Started calculation: shortest path from node A to node L
+
+2018-09-11T15:03:36.462Z - Weight to origin node set to zero (algorithm initialization)
+
+2018-09-11T15:03:36.462Z - Node A added to evaluation list
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node A, with cost = 0
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeA
+
+2018-09-11T15:03:36.462Z - Node A removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node A obtained (1 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node A started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node E started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node E? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node A) aggregate cost: 0
+
+2018-09-11T15:03:36.462Z - Cost of moving from A to E: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node E
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 10
+
+2018-09-11T15:03:36.462Z - Node E added to evaluation list
+
+2018-09-11T15:03:36.462Z - Shortest path found from node A to A; added to settled list
+
+2018-09-11T15:03:36.462Z - Amount of settled nodes: 1
+
+2018-09-11T15:03:36.462Z - Amount of evaluation pending nodes: 1
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node E, with cost = 10
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeE
+
+2018-09-11T15:03:36.462Z - Node E removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node E obtained (4 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node E started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node F started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node F? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node E) aggregate cost: 10
+
+2018-09-11T15:03:36.462Z - Cost of moving from E to F: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node F
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 14
+
+2018-09-11T15:03:36.462Z - Node F added to evaluation list
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node A started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node A? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node E) aggregate cost: 10
+
+2018-09-11T15:03:36.462Z - Cost of moving from E to A: 0
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node J started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node J? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node E) aggregate cost: 10
+
+2018-09-11T15:03:36.462Z - Cost of moving from E to J: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node J
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 15
+
+2018-09-11T15:03:36.462Z - Node J added to evaluation list
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node G started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node G? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node E) aggregate cost: 10
+
+2018-09-11T15:03:36.462Z - Cost of moving from E to G: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node G
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 19
+
+2018-09-11T15:03:36.462Z - Node G added to evaluation list
+
+2018-09-11T15:03:36.462Z - Shortest path found from node A to E; added to settled list
+
+2018-09-11T15:03:36.462Z - Amount of settled nodes: 2
+
+2018-09-11T15:03:36.462Z - Amount of evaluation pending nodes: 3
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node F, with cost = 14
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeF
+
+2018-09-11T15:03:36.462Z - Node F removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node F obtained (4 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node F started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node C started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node C? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node F) aggregate cost: 14
+
+2018-09-11T15:03:36.462Z - Cost of moving from F to C: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node C
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 25
+
+2018-09-11T15:03:36.462Z - Node C added to evaluation list
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node E started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node E? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node F) aggregate cost: 14
+
+2018-09-11T15:03:36.462Z - Cost of moving from F to E: 10
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node G started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node G? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node F) aggregate cost: 14
+
+2018-09-11T15:03:36.462Z - Cost of moving from F to G: 19
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node B started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node B? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node F) aggregate cost: 14
+
+2018-09-11T15:03:36.462Z - Cost of moving from F to B: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node B
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 15
+
+2018-09-11T15:03:36.462Z - Node B added to evaluation list
+
+2018-09-11T15:03:36.462Z - Shortest path found from node A to F; added to settled list
+
+2018-09-11T15:03:36.462Z - Amount of settled nodes: 3
+
+2018-09-11T15:03:36.462Z - Amount of evaluation pending nodes: 4
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node J, with cost = 15
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeJ
+
+2018-09-11T15:03:36.462Z - Node J removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node J obtained (3 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node J started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node E started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node E? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node J) aggregate cost: 15
+
+2018-09-11T15:03:36.462Z - Cost of moving from J to E: 10
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node G started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node G? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node J) aggregate cost: 15
+
+2018-09-11T15:03:36.462Z - Cost of moving from J to G: 19
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node H started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node H? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node J) aggregate cost: 15
+
+2018-09-11T15:03:36.462Z - Cost of moving from J to H: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node H
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 18
+
+2018-09-11T15:03:36.462Z - Node H added to evaluation list
+
+2018-09-11T15:03:36.462Z - Shortest path found from node A to J; added to settled list
+
+2018-09-11T15:03:36.462Z - Amount of settled nodes: 4
+
+2018-09-11T15:03:36.462Z - Amount of evaluation pending nodes: 4
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node B, with cost = 15
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeB
+
+2018-09-11T15:03:36.462Z - Node B removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node B obtained (2 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node B started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node F started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node F? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node B) aggregate cost: 15
+
+2018-09-11T15:03:36.462Z - Cost of moving from B to F: 14
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node K started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node K? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node B) aggregate cost: 15
+
+2018-09-11T15:03:36.462Z - Cost of moving from B to K: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node K
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 19
+
+2018-09-11T15:03:36.462Z - Node K added to evaluation list
+
+2018-09-11T15:03:36.462Z - Shortest path found from node A to B; added to settled list
+
+2018-09-11T15:03:36.462Z - Amount of settled nodes: 5
+
+2018-09-11T15:03:36.462Z - Amount of evaluation pending nodes: 4
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node H, with cost = 18
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeH
+
+2018-09-11T15:03:36.462Z - Node H removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node H obtained (3 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node H started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node J started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node J? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node H) aggregate cost: 18
+
+2018-09-11T15:03:36.462Z - Cost of moving from H to J: 15
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node D started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node D? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node H) aggregate cost: 18
+
+2018-09-11T15:03:36.462Z - Cost of moving from H to D: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node D
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 23
+
+2018-09-11T15:03:36.462Z - Node D added to evaluation list
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node G started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node G? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node H) aggregate cost: 18
+
+2018-09-11T15:03:36.462Z - Cost of moving from H to G: 19
+
+2018-09-11T15:03:36.462Z - Shortest path found from node A to H; added to settled list
+
+2018-09-11T15:03:36.462Z - Amount of settled nodes: 6
+
+2018-09-11T15:03:36.462Z - Amount of evaluation pending nodes: 4
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node G, with cost = 19
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeG
+
+2018-09-11T15:03:36.462Z - Node G removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node G obtained (5 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node G started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node F started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node F? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node G) aggregate cost: 19
+
+2018-09-11T15:03:36.462Z - Cost of moving from G to F: 14
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node I started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node I? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node G) aggregate cost: 19
+
+2018-09-11T15:03:36.462Z - Cost of moving from G to I: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node I
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 26
+
+2018-09-11T15:03:36.462Z - Node I added to evaluation list
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node E started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node E? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node G) aggregate cost: 19
+
+2018-09-11T15:03:36.462Z - Cost of moving from G to E: 10
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node J started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node J? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node G) aggregate cost: 19
+
+2018-09-11T15:03:36.462Z - Cost of moving from G to J: 15
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node H started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node H? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node G) aggregate cost: 19
+
+2018-09-11T15:03:36.462Z - Cost of moving from G to H: 18
+
+2018-09-11T15:03:36.462Z - Shortest path found from node A to G; added to settled list
+
+2018-09-11T15:03:36.462Z - Amount of settled nodes: 7
+
+2018-09-11T15:03:36.462Z - Amount of evaluation pending nodes: 4
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node K, with cost = 19
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeK
+
+2018-09-11T15:03:36.462Z - Node K removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node K obtained (2 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node K started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node B started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node B? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node K) aggregate cost: 19
+
+2018-09-11T15:03:36.462Z - Cost of moving from K to B: 15
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node L started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node L? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node K) aggregate cost: 19
+
+2018-09-11T15:03:36.462Z - Cost of moving from K to L: 2147483647
+
+2018-09-11T15:03:36.462Z - New lowest cost path found for node L
+
+2018-09-11T15:03:36.462Z - Previous cost: 2147483647
+
+2018-09-11T15:03:36.462Z - New cost: 27
+
+2018-09-11T15:03:36.462Z - Node L added to evaluation list
+
+2018-09-11T15:03:36.462Z - Shortest path found from node A to K; added to settled list
+
+2018-09-11T15:03:36.462Z - Amount of settled nodes: 8
+
+2018-09-11T15:03:36.462Z - Amount of evaluation pending nodes: 4
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node D, with cost = 23
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeD
+
+2018-09-11T15:03:36.462Z - Node D removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node D obtained (3 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node D started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node I started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node I? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node D) aggregate cost: 23
+
+2018-09-11T15:03:36.462Z - Cost of moving from D to I: 26
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node H started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node H? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node D) aggregate cost: 23
+
+2018-09-11T15:03:36.462Z - Cost of moving from D to H: 18
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node L started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node L? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node D) aggregate cost: 23
+
+2018-09-11T15:03:36.462Z - Cost of moving from D to L: 27
+
+2018-09-11T15:03:36.462Z - Shortest path found from node A to D; added to settled list
+
+2018-09-11T15:03:36.462Z - Amount of settled nodes: 9
+
+2018-09-11T15:03:36.462Z - Amount of evaluation pending nodes: 3
+
+2018-09-11T15:03:36.462Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.462Z - Pending evaluation review with lowest cost selected: node C, with cost = 25
+
+2018-09-11T15:03:36.462Z - Optimal candidate node found: nodeC
+
+2018-09-11T15:03:36.462Z - Node C removed from evaluation list
+
+2018-09-11T15:03:36.462Z - Adjacent Nodes to node C obtained (3 in total)
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent nodes to node C started
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node F started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node F? -> true
+
+2018-09-11T15:03:36.462Z - Current node (node C) aggregate cost: 25
+
+2018-09-11T15:03:36.462Z - Cost of moving from C to F: 14
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node I started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node I? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node C) aggregate cost: 25
+
+2018-09-11T15:03:36.462Z - Cost of moving from C to I: 26
+
+2018-09-11T15:03:36.462Z - Evaluation of adjacent node L started
+
+2018-09-11T15:03:36.462Z - Settled nodes list contains node L? -> false
+
+2018-09-11T15:03:36.462Z - Current node (node C) aggregate cost: 25
+
+2018-09-11T15:03:36.462Z - Cost of moving from C to L: 27
+
+2018-09-11T15:03:36.478Z - Shortest path found from node A to C; added to settled list
+
+2018-09-11T15:03:36.478Z - Amount of settled nodes: 10
+
+2018-09-11T15:03:36.478Z - Amount of evaluation pending nodes: 2
+
+2018-09-11T15:03:36.478Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.478Z - Pending evaluation review with lowest cost selected: node I, with cost = 26
+
+2018-09-11T15:03:36.478Z - Optimal candidate node found: nodeI
+
+2018-09-11T15:03:36.478Z - Node I removed from evaluation list
+
+2018-09-11T15:03:36.478Z - Adjacent Nodes to node I obtained (3 in total)
+
+2018-09-11T15:03:36.478Z - Evaluation of adjacent nodes to node I started
+
+2018-09-11T15:03:36.478Z - Evaluation of adjacent node C started
+
+2018-09-11T15:03:36.478Z - Settled nodes list contains node C? -> true
+
+2018-09-11T15:03:36.478Z - Current node (node I) aggregate cost: 26
+
+2018-09-11T15:03:36.478Z - Cost of moving from I to C: 25
+
+2018-09-11T15:03:36.478Z - Evaluation of adjacent node D started
+
+2018-09-11T15:03:36.478Z - Settled nodes list contains node D? -> true
+
+2018-09-11T15:03:36.478Z - Current node (node I) aggregate cost: 26
+
+2018-09-11T15:03:36.478Z - Cost of moving from I to D: 23
+
+2018-09-11T15:03:36.478Z - Evaluation of adjacent node G started
+
+2018-09-11T15:03:36.478Z - Settled nodes list contains node G? -> true
+
+2018-09-11T15:03:36.478Z - Current node (node I) aggregate cost: 26
+
+2018-09-11T15:03:36.478Z - Cost of moving from I to G: 19
+
+2018-09-11T15:03:36.478Z - Shortest path found from node A to I; added to settled list
+
+2018-09-11T15:03:36.478Z - Amount of settled nodes: 11
+
+2018-09-11T15:03:36.478Z - Amount of evaluation pending nodes: 1
+
+2018-09-11T15:03:36.478Z - Iteration over evaluation list n°1 started
+
+2018-09-11T15:03:36.478Z - Pending evaluation review with lowest cost selected: node L, with cost = 27
+
+2018-09-11T15:03:36.478Z - Optimal candidate node found: nodeL
+
+2018-09-11T15:03:36.478Z - Node L removed from evaluation list
+
+2018-09-11T15:03:36.478Z - Adjacent Nodes to node L obtained (3 in total)
+
+2018-09-11T15:03:36.478Z - Evaluation of adjacent nodes to node L started
+
+2018-09-11T15:03:36.478Z - Evaluation of adjacent node C started
+
+2018-09-11T15:03:36.478Z - Settled nodes list contains node C? -> true
+
+2018-09-11T15:03:36.478Z - Current node (node L) aggregate cost: 27
+
+2018-09-11T15:03:36.478Z - Cost of moving from L to C: 25
+
+2018-09-11T15:03:36.478Z - Evaluation of adjacent node D started
+
+2018-09-11T15:03:36.478Z - Settled nodes list contains node D? -> true
+
+2018-09-11T15:03:36.478Z - Current node (node L) aggregate cost: 27
+
+2018-09-11T15:03:36.478Z - Cost of moving from L to D: 23
+
+2018-09-11T15:03:36.478Z - Evaluation of adjacent node K started
+
+2018-09-11T15:03:36.478Z - Settled nodes list contains node K? -> true
+
+2018-09-11T15:03:36.478Z - Current node (node L) aggregate cost: 27
+
+2018-09-11T15:03:36.478Z - Cost of moving from L to K: 19
+
+2018-09-11T15:03:36.478Z - Shortest path found from node A to L; added to settled list
+
+2018-09-11T15:03:36.478Z - Amount of settled nodes: 12
+
+2018-09-11T15:03:36.478Z - Amount of evaluation pending nodes: 0
+
+2018-09-11T15:03:36.478Z -  SUCCESS!
+
+2018-09-11T15:03:36.478Z -  Shortest path from A to L has been found!
+
+2018-09-11T15:03:36.478Z -  Shortest path is: A -> E -> F -> B -> K -> L , which has a cost of: 27
+
