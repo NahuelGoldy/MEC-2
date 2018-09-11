@@ -23,13 +23,14 @@ public class Main {
             ArrayList<Node> path = dijkstra.calculateShortestPath(scenario.getOrigin(), scenario.getDestination());
 
             // auxiliary variables and loop to improve legibility (log)
-            String pathString = "";
+            StringBuilder pathString = new StringBuilder();
             int pathCost = 0;
             for(Node n : path) {
-                pathString += (n.getName() + " -> ");
-                if(n.getName() == scenario.getDestination()) pathCost = n.getCostFromSource();
+                pathString.append(n.getName()).append(" -> ");
+                if(n.getName().equals(scenario.getDestination())) pathCost = n.getCostFromSource();
             }
-            pathString = pathString.substring(0, pathString.length()-3);
+            pathString = new StringBuilder(pathString.substring(0, pathString.length() - 4));
+
             logger.log(" SUCCESS!");
             logger.log(" Shortest path from " + scenario.getOrigin() + " to " + scenario.getDestination() + " has been found!");
             logger.log(" Shortest path is: " + pathString + ", which has a cost of: " + pathCost);
