@@ -18,7 +18,7 @@ public class Graph {
     public Node getNode(String name) {
         Node result = null;
         for(Node n : this.nodes) {
-            if(n.getName() == name) {
+            if(n.getName().equals(name)) {
                 result = n;
             }
         }
