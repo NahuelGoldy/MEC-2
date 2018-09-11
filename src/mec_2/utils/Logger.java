@@ -42,4 +42,8 @@ public class Logger {
         }
     }
 
+    public void clearLog() {
+        this.log = new ArrayList<>();
+    }
+
 }
