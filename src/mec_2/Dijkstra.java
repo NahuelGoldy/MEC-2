@@ -28,36 +28,35 @@ public class Dijkstra {
         Set<Node> unsettledNodes = new HashSet<>();
         ArrayList<Node> path = new ArrayList<>();
         Node node_origin = this.graph.getNode(origin);
+
         // set up cost zero for initial node
         node_origin.setCostFromSource(0);
         this.logger.log("Weight to origin node set to zero (algorithm initialization)");
 
         unsettledNodes.add(node_origin);
-        this.logger.log("Node " + node_origin.getName() + " added to evaluation list");
+        this.logger.log("Node " + node_origin.getName() + " added to evaluation list (algorithm initialization)");
+        int it = 1;
 
         while (unsettledNodes.size() != 0) {
-            int its = 1;
-            this.logger.log("Iteration over evaluation list n°" + its + " started");
+
+            this.logger.log("****** Iteration nº" + it + " started ******");
+            this.logger.log("Unsettled nodes list BEFORE adjacents evaluation: ", unsettledNodes);
             // from the list of unsettled nodes, select the one that holds the lowest aggregate cost from source
+
             Node currentNode = getLowestDistanceNode(unsettledNodes);
-            this.logger.log("Optimal candidate node found: node" + currentNode.getName());
             unsettledNodes.remove(currentNode);
-            this.logger.log("Node " + currentNode.getName() + " removed from evaluation list");
             Map<Node, Integer> adjacents = currentNode.getAdjacents();
-            this.logger.log("Adjacent Nodes to node " + currentNode.getName() + " obtained (" + adjacents.keySet().size() + " in total)");
 
             this.logger.log("Evaluation of adjacent nodes to node " + currentNode.getName() + " started");
+            this.logger.log("Adjacent nodes list: ", adjacents);
+
             // check each one of its adjacent nodes
             for (Node adj : adjacents.keySet()) {
-                this.logger.log("Evaluation of adjacent node " + adj.getName() + " started");
                 // if the adjacent node has not been already settled
                 //   and the current calculated path has a lower cost than the one it already holds, update it
-                this.logger.log("Settled nodes list contains node " + adj.getName() + "? -> " + settledNodes.contains(adj));
-                this.logger.log("Current node (node " + currentNode.getName() + ") aggregate cost: " + currentNode.getCostFromSource());
-                this.logger.log("Cost of moving from " + currentNode.getName() + " to " + adj.getName() + ": " + adj.getCostFromSource());
                 if (!settledNodes.contains(adj) && (currentNode.getCostFromSource() + adjacents.get(adj) < adj.getCostFromSource())) {
                     this.logger.log("New lowest cost path found for node " + adj.getName());
-                    this.logger.log("Previous cost: " + adj.getCostFromSource());
+                    this.logger.log("Previous cost: " + ((adj.getCostFromSource() == Integer.MAX_VALUE) ? "INFINITE" : adj.getCostFromSource()));
                     adj.setCostFromSource(currentNode.getCostFromSource() + adjacents.get(adj));
                     this.logger.log("New cost: " + adj.getCostFromSource());
                     adj.setPath(currentNode.getPath());
@@ -66,12 +65,12 @@ public class Dijkstra {
                     this.logger.log("Node " + adj.getName() + " added to evaluation list" );
                 }
             }
+            this.logger.log("Unsettled nodes list AFTER adjacents evaluation: ", unsettledNodes);
+            this.logger.log("Node " + currentNode.getName() + " has been evaluated; shifting to settled list");
             // as all of its adjacents have been evaluated, the current node can be marked as settled
             settledNodes.add(currentNode);
-            this.logger.log("Shortest path found from node " + origin + " to " + currentNode.getName() + "; added to settled list");
-            this.logger.log("Amount of settled nodes: " + settledNodes.size());
-            this.logger.log("Amount of evaluation pending nodes: " + unsettledNodes.size());
-            its++;
+            this.logger.log("Settled nodes list: ", settledNodes);
+            it++;
         }
 
         // finalize construction of the result list for a particular destination
@@ -95,7 +94,7 @@ public class Dijkstra {
                 lowestDistanceNode = node;
             }
         }
-        this.logger.log("Pending evaluation review with lowest cost selected: node " + lowestDistanceNode.getName() + ", with cost = " + lowestDistance);
+        this.logger.log("Unsettled node with lowest cost from origin: node " + lowestDistanceNode.getName() + ", with cost = " + lowestDistance);
         return lowestDistanceNode;
     }
 }
